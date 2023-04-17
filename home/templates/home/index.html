@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" novalidate method="get">
+
+    {{ form.as_p }}
+    <input type="submit" value="Send">
+</form><br><br>
+
+    <div class="card">
+        {% for post in posts %}
+             <a href="{{ post.get_absolute_url }}" class="card-body">{{ post.body|truncatewords:4 }}</a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
